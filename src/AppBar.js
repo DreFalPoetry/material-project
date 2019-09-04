@@ -13,6 +13,21 @@ const useStyles = makeStyles({
   root: {
     padding: 0,
   },
+  appBarWrapper:{
+    flexGrow: 1,
+  },
+  title: {
+    flexGrow: 1,
+  },
+  nav:{
+    display:'inline-block',
+
+  },
+  navItem:{
+    display:'inline-block',
+    marginLeft:16,
+    color:'#5abebe'
+  }
 });
 
 function ElevationScroll(props) {
@@ -45,10 +60,21 @@ export default function ElevateAppBar(props) {
   return (
     <React.Fragment>
       <CssBaseline />
-      <ElevationScroll {...props}>
+      <ElevationScroll {...props} className={classes.appBarWrapper}>
         <AppBar>
           <Toolbar>
-            <Typography variant="h6" color="secondary">Ad Exchange</Typography>
+            <Typography variant="h6" className={classes.title} color="secondary">Ad Exchange</Typography>
+            <div className={classes.nav}>
+              <Typography  className={classes.navItem}>
+                Tracker
+              </Typography>
+              <Typography  className={classes.navItem}>
+                Publisher
+              </Typography>
+              <Typography className={classes.navItem}>
+                Forum
+              </Typography>
+            </div>
           </Toolbar>
         </AppBar>
       </ElevationScroll>

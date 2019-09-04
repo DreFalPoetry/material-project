@@ -3,7 +3,17 @@ import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import { makeStyles,createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
+
+const theme = createMuiTheme({
+  palette: {
+    primary:{
+      main:'#5abebe'
+    },
+  }
+});
 
 const useStyles = makeStyles(theme => ({
   section1: {
@@ -26,6 +36,10 @@ const useStyles = makeStyles(theme => ({
   },
   padding:{
     padding:8
+  },
+  inputStyle:{
+    width:300,
+    padding:'9px 5px'
   }
 }));
 
@@ -52,9 +66,20 @@ export default function Section1(){
           </Grid>
           <Grid item xs={6} className={classes.content}>
             <Paper className={classes.form}>
-              <Typography  variant="h4" className={classes.padding}>
-                Cras mattis consectetur purus sit amet fermentum.
-              </Typography>
+              <ThemeProvider theme={theme}>
+                <TextField
+                  label="ThemeProvider"
+                  variant="outlined"
+                  classes={{
+                    root:classes.inputStyle
+                  }}
+                  InputProps={{
+                    classes:{
+                      input:classes.inputStyle
+                    }
+                  }}
+                />
+              </ThemeProvider>
               <Typography variant="h5"  className={classes.padding}>
                 Cras justo odio, dapibus ac facilisis in, egestas eget quam.
               </Typography>
