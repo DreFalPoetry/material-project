@@ -48,7 +48,7 @@ export default function ElevateAppBar(props) {
       <ElevationScroll {...props}>
         <AppBar>
           <Toolbar>
-            <Typography variant="h6">Ad Exchange</Typography>
+            <Typography variant="h6" color="secondary">Ad Exchange</Typography>
           </Toolbar>
         </AppBar>
       </ElevationScroll>
