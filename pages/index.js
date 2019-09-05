@@ -7,6 +7,7 @@ import ProTip from '../src/ProTip';
 import Link from '../src/Link';
 import ElevateAppBar from '../src/AppBar';
 import Section1 from '../src/Section1'
+import Section2 from '../src/Section2'
 
 const styles = {
   root: {
@@ -33,6 +34,7 @@ function Index(props) {
     <Container className={classes.root} maxWidth="xl">
       <ElevateAppBar>
        <Section1/>
+       <Section2/>
       </ElevateAppBar>
     </Container>
   );
