@@ -8,6 +8,7 @@ import Button from '@material-ui/core/Button';
 import { makeStyles,createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import SimpleTable from './TrackerResTable';
+import CampaignRecommend from './CampaignRecommend';
 
 const theme = createMuiTheme({
   palette: {
@@ -79,7 +80,7 @@ export default function TrackerPage(){
               <Typography variant="h5"  className={classes.padding}>
                 Cras justo odio, dapibus ac facilisis in, egestas eget quam.
               </Typography>
-              <Typography variant="body1"  className={classes.padding} style={{marginTop:16}}>
+              <Typography variant="body1"  className={classes.padding}>
                 Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
               </Typography>
               <Typography variant="body1"  className={classes.padding}>
@@ -267,6 +268,17 @@ export default function TrackerPage(){
                 <SimpleTable/>
               }
             </Paper>
+          </Grid>
+          <Grid item xs={4} className={classes.content}>
+              <Paper  className={classes.form}>
+                <Typography variant="h5"  className={classes.padding}>
+                  Cras justo odio, dapibus ac facilisis in
+                </Typography>
+                <Typography variant="body1"  className={classes.padding}>
+                  Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                </Typography>
+                <CampaignRecommend style={{marginTop:16}}/>
+              </Paper>
           </Grid>
         </Grid>
     </Box>

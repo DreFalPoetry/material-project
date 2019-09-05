@@ -19,7 +19,8 @@ const useStyles = makeStyles(theme => ({
   },
   trackerItemWrapper:{
     display:'flex',
-    alignItems:'center'
+    alignItems:'flex-end',
+    padding:'5px 0px',
   }
 }));
 
@@ -41,12 +42,12 @@ export default function SimpleTable() {
   return (
     <Paper className={classes.root}>
       <Table className={classes.table}>
-        <TableHead>
+        <TableHead className={classes.tableHead}>
           <TableRow>
             <TableCell>Url</TableCell>
-            <TableCell align="right">Times</TableCell>
-            <TableCell align="right">Is Target</TableCell>
-            <TableCell align="right">Track Links</TableCell>
+            <TableCell>Times</TableCell>
+            <TableCell>Is Target</TableCell>
+            <TableCell>Track Links</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -55,13 +56,13 @@ export default function SimpleTable() {
               <TableCell component="th" scope="row">
                 {row.name}
               </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs.map((v,ind)=>{
+              <TableCell>{row.calories}</TableCell>
+              <TableCell>{row.fat}</TableCell>
+              <TableCell>{row.carbs.map((v,ind)=>{
                 return (
                   <div className={classes.trackerItemWrapper} key={ind}>
-                    {ind + 1}
-                    <img style={{width:'30px',height:'30px'}} src={v.img} alt=""/>
+                    {ind + 1}.
+                    <img style={{width:'30px',height:'30px',margin:'0px 5px'}} src={v.img} alt=""/>
                     {v.url}
                   </div>
                 )
