@@ -9,6 +9,7 @@ import ElevateAppBar from '../src/AppBar';
 import Section1 from '../src/Section1'
 import Section2 from '../src/Section2'
 import Section3 from '../src/Section3'
+import Footer from '../src/Footer'
 
 const styles = {
   root: {
@@ -37,6 +38,7 @@ function Index(props) {
        <Section1/>
        <Section2/>
        <Section3/>
+       <Footer/>
       </ElevateAppBar>
     </Container>
   );
