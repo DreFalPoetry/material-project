@@ -19,7 +19,7 @@ const theme = createMuiTheme({
 const useStyles = makeStyles(theme => ({
   section1: {
     height:'auto',
-    minHeight:500,
+    minHeight:560,
     background:"#fafafa url('/static/images/section1Bg.png') no-repeat top right",
     fontSize:20
   },
