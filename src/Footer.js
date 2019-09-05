@@ -1,10 +1,13 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
+import clsx from 'clsx';
+import MuiLink from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
   footer:{
+    width:'100%',
     borderTop:'4px solid #5abebe',
     display:'flex',
     flexDirection:'column',
@@ -33,19 +36,28 @@ const useStyles = makeStyles(theme => ({
   },
   mt24:{
     marginTop:24
+  },
+  fixed:{
+    position:'fixed',
+    bottom:0,
+    left:0
   }
 }))
 
-export default function Footer(){
+export default function Footer(props){
   const classes = useStyles();
+  const {fixed} = props;
   return (
-    <Box bgcolor="#ecfcfc" px={4} className={classes.footer}>
+    <Box bgcolor="#ecfcfc" px={4} className={fixed? clsx(classes.footer,classes.fixed) : classes.footer}>
       <Typography variant="h4" className={classes.mt12} style={{fontWeight:'bold',color:'#5abebe'}}>
         Welcome to join and start your ....
       </Typography>
       <div className={classes.navWrapper}>
         <Typography variant="body1" className={classes.navItem}>
-          Home
+          <MuiLink href="/" style={{color:'#909090'}}>
+            Home
+          </MuiLink>
+          
         </Typography>
         |
         <Typography variant="body1" className={classes.navItem}>

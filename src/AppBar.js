@@ -7,6 +7,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
+import MuiLink from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles({
@@ -25,8 +26,12 @@ const useStyles = makeStyles({
   },
   navItem:{
     display:'inline-block',
-    marginLeft:16,
-    color:'#5abebe'
+    marginLeft:24,
+    color:'#5abebe',
+    cursor:'pointer',
+    '&:hover':{
+      transform:'scale(1.05)'
+    }
   }
 });
 
@@ -66,7 +71,9 @@ export default function ElevateAppBar(props) {
             <Typography variant="h6" className={classes.title} color="secondary">Ad Exchange</Typography>
             <div className={classes.nav}>
               <Typography  className={classes.navItem}>
-                Tracker
+                <MuiLink color="secondary" href="/tracker">
+                  Tracker
+                </MuiLink>
               </Typography>
               <Typography  className={classes.navItem}>
                 Publisher
